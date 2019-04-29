@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Катя Матя](https://up.htmlacademy.ru/react/1/user/84950).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Каринский](https://up.htmlacademy.ru/react/1/user/1033299).
 
 ---
 
