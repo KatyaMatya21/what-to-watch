@@ -12,7 +12,7 @@ const Movie = (props) => {
         <img src={src ? src : `img/what-we-do-in-the-shadows.jpg`} alt={title} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href={link ? link : `link.html`}>{title}</a>
+        <a className="small-movie-card__link" href={link}>{title}</a>
       </h3>
     </article>
 
