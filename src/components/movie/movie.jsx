@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Movie = (props) => {
-  const {title, src, link} = props;
+  const {title, src, link, onClick} = props;
 
   return <React.Fragment>
 
@@ -12,7 +12,7 @@ const Movie = (props) => {
         <img src={src ? src : `img/what-we-do-in-the-shadows.jpg`} alt={title} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href={link}>{title}</a>
+        <a className="small-movie-card__link" href={link} onClick={onClick}>{title}</a>
       </h3>
     </article>
 
@@ -22,7 +22,8 @@ const Movie = (props) => {
 Movie.propTypes = {
   title: PropTypes.string.isRequired,
   src: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default Movie;
