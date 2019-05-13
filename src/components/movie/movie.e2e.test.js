@@ -13,15 +13,27 @@ const movie = {
 };
 
 describe(`Movie component`, () => {
+  const clickHandler = jest.fn();
+  const playHandler = jest.fn(() => movie);
 
   it(`Correctly clicks title link`, () => {
-    const clickHandler = jest.fn();
-    const MovieComponent = shallow(<Movie {...movie} onClick={clickHandler}/>);
+    const MovieComponent = shallow(<Movie {...movie} onClick={clickHandler} onPlay={playHandler}/>);
+
     const titleMovie = MovieComponent.find(`.small-movie-card__link`);
+    expect(titleMovie.length).toBe(1);
 
     titleMovie.simulate(`click`);
-
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
 
+  it(`Correctly clicks play button`, () => {
+    const MovieComponent = shallow(<Movie {...movie} onClick={clickHandler} onPlay={playHandler}/>);
+
+    const playButton = MovieComponent.find(`button`);
+    expect(playButton.length).toBe(1);
+
+    playButton.simulate(`click`, playHandler);
+    expect(playHandler).toHaveBeenCalledTimes(1);
+    expect(playHandler).toHaveReturnedWith(movie);
+  });
 });
