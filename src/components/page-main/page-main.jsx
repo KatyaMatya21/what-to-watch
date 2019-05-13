@@ -154,7 +154,12 @@ const PageMain = (props) => {
 };
 
 PageMain.propTypes = {
-  movies: PropTypes.array.isRequired
+  movies: PropTypes.PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    link: PropTypes.string,
+    onClick: PropTypes.func
+  })).isRequired
 };
 
 export default PageMain;
