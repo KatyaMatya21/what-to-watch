@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import MoviesList from '../movies-list/movies-list.jsx';
 
 const PageMain = (props) => {
+  const {movies} = props;
+
   return <React.Fragment>
 
     <div className="visually-hidden">
@@ -127,7 +129,7 @@ const PageMain = (props) => {
         </ul>
 
         <MoviesList
-          items={props.movies}
+          movies={movies}
         />
 
         <div className="catalog__more">
@@ -157,9 +159,7 @@ PageMain.propTypes = {
   movies: PropTypes.PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     src: PropTypes.string,
-    link: PropTypes.string,
-    onClick: PropTypes.func,
-    onPlay: PropTypes.func
+    link: PropTypes.string
   })).isRequired
 };
 

@@ -1,13 +1,5 @@
 export default [
   {
-    'title': `Without Link`,
-    'src': `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
-  },
-  {
-    'title': `Without Image`,
-    'link': `movie-page.html`
-  },
-  {
     'title': `Fantastic Beasts: The Crimes of Grindelwald`,
     'src': `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     'link': `movie-page.html`

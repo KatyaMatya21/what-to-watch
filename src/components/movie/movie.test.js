@@ -13,7 +13,7 @@ describe(`Movie component`, () => {
 
   it(`Correctly renders`, () => {
     const MovieComponent = renderer
-      .create(<Movie {...movie} />)
+      .create(<Movie movie={movie} />)
       .toJSON();
     expect(MovieComponent).toMatchSnapshot();
   });

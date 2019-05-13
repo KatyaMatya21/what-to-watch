@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Movie = (props) => {
-  const {title, src, link, onClick, onPlay} = props;
+  const {movie, onClick, onMouseEnter} = props;
 
   return <React.Fragment>
 
-    <article className="small-movie-card catalog__movies-card">
-      <button className="small-movie-card__play-btn" type="button" onClick={onPlay}>Play</button>
+    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnter(movie)}>
+      <button className="small-movie-card__play-btn" type="button" onClick={() => onClick(movie)}>Play</button>
       <div className="small-movie-card__image">
-        <img src={src ? src : `img/what-we-do-in-the-shadows.jpg`} alt={title} width="280" height="175"/>
+        <img src={movie.src ? movie.src : `img/what-we-do-in-the-shadows.jpg`} alt={movie.title} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href={link} onClick={onClick}>{title}</a>
+        <a className="small-movie-card__link" href={movie.link} onClick={() => onClick(movie)}>{movie.title}</a>
       </h3>
     </article>
 
@@ -20,11 +20,13 @@ const Movie = (props) => {
 };
 
 Movie.propTypes = {
-  title: PropTypes.string.isRequired,
-  src: PropTypes.string,
-  link: PropTypes.string,
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    link: PropTypes.string
+  }).isRequired,
   onClick: PropTypes.func,
-  onPlay: PropTypes.func
+  onMouseEnter: PropTypes.func
 };
 
 export default Movie;

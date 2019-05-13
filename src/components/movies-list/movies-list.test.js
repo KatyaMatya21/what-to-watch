@@ -15,7 +15,7 @@ describe(`MoviesList component`, () => {
 
   it(`Correctly renders`, () => {
     const MoviesListComponent = renderer
-      .create(<MoviesList items={movies} />)
+      .create(<MoviesList movies={movies} />)
       .toJSON();
     expect(MoviesListComponent).toMatchSnapshot();
   });
