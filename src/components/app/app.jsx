@@ -14,7 +14,8 @@ App.propTypes = {
     title: PropTypes.string.isRequired,
     src: PropTypes.string,
     link: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    onPlay: PropTypes.func
   })).isRequired
 };
 
