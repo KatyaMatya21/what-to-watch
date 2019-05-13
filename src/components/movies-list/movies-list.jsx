@@ -14,6 +14,8 @@ const MoviesList = ({items}) => {
             src={item.src}
             link={item.link}
             key={i}
+            onClick={item.onClick}
+            onPlay={item.onPlay}
           />
         );
       })}
