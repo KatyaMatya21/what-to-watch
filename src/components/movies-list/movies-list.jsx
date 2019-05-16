@@ -1,37 +1,62 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Movie from '../movie/movie.jsx';
 
-const MoviesList = ({items}) => {
-  return <React.Fragment>
+class MoviesList extends Component {
+  constructor(props) {
+    super(props);
 
-    <div className="catalog__movies-list">
-      {items.map((item, i) => {
-        return (
-          <Movie
-            title={item.title}
-            src={item.src}
-            link={item.link}
-            key={i}
-            onClick={item.onClick}
-            onPlay={item.onPlay}
-          />
-        );
-      })}
-    </div>
+    this.state = {
+      activeCard: null,
+    };
 
-  </React.Fragment>;
-};
+    this._onMouseEnter = this._onMouseEnter.bind(this);
+    this._onClick = this._onClick.bind(this);
+  }
+
+  _onClick(movie) {
+    return movie;
+  }
+
+  _onMouseEnter(movie) {
+    this.setState({
+      activeCard: movie
+    });
+  }
+
+  render() {
+    const {movies} = this.props;
+
+    const movieList = movies.map((item, i) => {
+      return (
+        <Movie
+          movie={item}
+          key={i}
+          onClick={this._onClick}
+          onMouseEnter={this._onMouseEnter}
+        />
+      );
+    });
+
+    return <React.Fragment>
+
+      <div className="catalog__movies-list">
+        {movieList}
+      </div>
+
+    </React.Fragment>;
+  }
+}
 
 MoviesList.propTypes = {
-  items: PropTypes.PropTypes.arrayOf(PropTypes.shape({
+  movies: PropTypes.PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     src: PropTypes.string,
-    link: PropTypes.string,
-    onClick: PropTypes.func,
-    onPlay: PropTypes.func
-  })).isRequired
+    link: PropTypes.string
+  })).isRequired,
+  onClick: PropTypes.func,
+  onMouseEnter: PropTypes.func
 };
 
 export default MoviesList;
