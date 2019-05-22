@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import movieType from '../../types/movie';
+
+import VideoPlayer from '../video-player/video-player.jsx';
 
 const Movie = (props) => {
-  const {movie, onClick = () => {}, onMouseEnter = () => {}} = props;
+  const {movie, onMouseEnter = () => {}, onMouseOut = () => {}, isHovered} = props;
 
   return <React.Fragment>
 
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnter(movie)}>
-      <button className="small-movie-card__play-btn" type="button" onClick={() => onClick(movie)}>Play</button>
+    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnter(movie)} onMouseOut={() => onMouseOut()}>
       <div className="small-movie-card__image">
-        <img src={movie.src ? movie.src : `img/what-we-do-in-the-shadows.jpg`} alt={movie.title} width="280" height="175"/>
+        <VideoPlayer
+          movie={movie}
+          isHovered={isHovered}
+        />
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href={movie.link} onClick={() => onClick(movie)}>{movie.title}</a>
+        <a className="small-movie-card__link" href={movie.link}>{movie.title}</a>
       </h3>
     </article>
 
@@ -20,13 +25,10 @@ const Movie = (props) => {
 };
 
 Movie.propTypes = {
-  movie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    src: PropTypes.string,
-    link: PropTypes.string
-  }).isRequired,
-  onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func
+  movie: movieType.isRequired,
+  onMouseEnter: PropTypes.func,
+  onMouseOut: PropTypes.func,
+  isHovered: PropTypes.bool
 };
 
 export default Movie;

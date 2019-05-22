@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import movieType from '../../types/movie';
 
 import PageMain from '../page-main/page-main.jsx';
 
@@ -12,11 +13,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    src: PropTypes.string,
-    link: PropTypes.string
-  })).isRequired
+  movies: PropTypes.arrayOf(movieType).isRequired
 };
 
 export default App;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import movieType from '../../types/movie';
 
 import MoviesList from '../movies-list/movies-list.jsx';
 
@@ -156,11 +157,7 @@ const PageMain = (props) => {
 };
 
 PageMain.propTypes = {
-  movies: PropTypes.PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    src: PropTypes.string,
-    link: PropTypes.string
-  })).isRequired
+  movies: PropTypes.arrayOf(movieType).isRequired
 };
 
 export default PageMain;
