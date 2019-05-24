@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Movie from '../movie/movie.jsx';
+import VideoPlayer from '../video-player/video-player.jsx';
 
 const movie = {
   'id': `1`,
@@ -11,12 +11,12 @@ const movie = {
   'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
 };
 
-describe(`Movie component`, () => {
+describe(`VideoPlayer component`, () => {
 
   it(`Correctly renders`, () => {
-    const MovieComponent = renderer
+    const VideoPlayerComponent = renderer
       .create(
-          <Movie movie={movie} />,
+          <VideoPlayer movie={movie}/>,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {
@@ -27,7 +27,7 @@ describe(`Movie component`, () => {
           }
       )
       .toJSON();
-    expect(MovieComponent).toMatchSnapshot();
+    expect(VideoPlayerComponent).toMatchSnapshot();
   });
 
 });

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import movieType from '../../types/movie';
 
 import Movie from '../movie/movie.jsx';
 
@@ -11,17 +12,29 @@ class MoviesList extends Component {
       activeCard: null,
     };
 
-    this._onMouseEnter = this._onMouseEnter.bind(this);
-    this._onClick = this._onClick.bind(this);
-  }
+    this.timer = null;
 
-  _onClick(movie) {
-    return movie;
+    this._onMouseEnter = this._onMouseEnter.bind(this);
+    this._onMouseOut = this._onMouseOut.bind(this);
   }
 
   _onMouseEnter(movie) {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+
+    this.timer = setTimeout(() => {
+      this.setState({
+        activeCard: movie.id
+      });
+    }, 1000);
+  }
+
+  _onMouseOut() {
+    clearTimeout(this.timer);
+
     this.setState({
-      activeCard: movie
+      activeCard: null
     });
   }
 
@@ -33,8 +46,9 @@ class MoviesList extends Component {
         <Movie
           movie={item}
           key={i}
-          onClick={this._onClick}
           onMouseEnter={this._onMouseEnter}
+          onMouseOut={this._onMouseOut}
+          isHovered={(item.id === this.state.activeCard)}
         />
       );
     });
@@ -50,13 +64,7 @@ class MoviesList extends Component {
 }
 
 MoviesList.propTypes = {
-  movies: PropTypes.PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    src: PropTypes.string,
-    link: PropTypes.string
-  })).isRequired,
-  onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func
+  movies: PropTypes.PropTypes.arrayOf(movieType).isRequired
 };
 
 export default MoviesList;
