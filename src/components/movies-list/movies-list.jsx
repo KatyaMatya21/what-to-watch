@@ -13,6 +13,9 @@ class MoviesList extends Component {
     };
 
     this.timer = null;
+
+    this._onMouseEnter = this._onMouseEnter.bind(this);
+    this._onMouseOut = this._onMouseOut.bind(this);
   }
 
   _onMouseEnter(movie) {
@@ -43,8 +46,8 @@ class MoviesList extends Component {
         <Movie
           movie={item}
           key={i}
-          onMouseEnter={() => this._onMouseEnter(item)}
-          onMouseOut={() => this._onMouseOut()}
+          onMouseEnter={this._onMouseEnter}
+          onMouseOut={this._onMouseOut}
           isHovered={(item.id === this.state.activeCard)}
         />
       );
