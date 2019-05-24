@@ -9,7 +9,7 @@ const Movie = (props) => {
 
   return <React.Fragment>
 
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnter()} onMouseOut={() => onMouseOut()}>
+    <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnter(movie)} onMouseOut={() => onMouseOut()}>
       <div className="small-movie-card__image">
         <VideoPlayer
           movie={movie}
