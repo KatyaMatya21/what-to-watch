@@ -58,9 +58,9 @@ class GenresList extends Component {
 }
 
 GenresList.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.shape(movieType)),
-  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  selectGenre: PropTypes.func
+  movies: PropTypes.arrayOf(PropTypes.shape(movieType)).isRequired,
+  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+  selectGenre: PropTypes.func.isRequired
 };
 
 export default GenresList;

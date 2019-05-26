@@ -70,7 +70,7 @@ class VideoPlayer extends PureComponent {
 }
 
 VideoPlayer.propTypes = {
-  movie: movieType,
+  movie: movieType.isRequired,
   isHovered: PropTypes.bool
 };
 

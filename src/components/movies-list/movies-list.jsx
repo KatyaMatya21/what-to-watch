@@ -64,8 +64,8 @@ class MoviesList extends Component {
 }
 
 MoviesList.propTypes = {
-  movies: PropTypes.PropTypes.arrayOf(movieType),
-  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+  movies: PropTypes.PropTypes.arrayOf(movieType).isRequired,
+  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 
 export default MoviesList;
