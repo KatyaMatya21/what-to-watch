@@ -18,7 +18,7 @@ describe(`PageMain component`, () => {
   it(`Correctly renders`, () => {
     const PageMainComponent = renderer
       .create(
-          <PageMain movies={movies} />,
+          <PageMain movies={movies} currentGenre={false} />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {

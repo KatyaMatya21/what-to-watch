@@ -25,7 +25,7 @@ const Movie = (props) => {
 };
 
 Movie.propTypes = {
-  movie: movieType.isRequired,
+  movie: movieType,
   onMouseEnter: PropTypes.func,
   onMouseOut: PropTypes.func,
   isHovered: PropTypes.bool

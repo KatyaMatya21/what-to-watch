@@ -39,10 +39,10 @@ class MoviesList extends Component {
   }
 
   render() {
-    const {movies} = this.props;
+    const {movies, currentGenre} = this.props;
 
     const movieList = movies.map((item, i) => {
-      return (
+      return (!currentGenre || currentGenre === item.genre) && (
         <Movie
           movie={item}
           key={i}
@@ -64,7 +64,8 @@ class MoviesList extends Component {
 }
 
 MoviesList.propTypes = {
-  movies: PropTypes.PropTypes.arrayOf(movieType).isRequired
+  movies: PropTypes.PropTypes.arrayOf(movieType),
+  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
 export default MoviesList;
