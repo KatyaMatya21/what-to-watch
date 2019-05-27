@@ -7,21 +7,21 @@ exports[`GenresList component Correctly renders 1`] = `
   <li
     className="catalog__genres-item catalog__genres-item--active"
   >
-    <a
+    <button
       className="catalog__genres-link"
-      href="#"
       onClick={[Function]}
+      type="button"
     >
       All genres
-    </a>
+    </button>
   </li>
   <li
     className="catalog__genres-item "
   >
-    <a
+    <button
       className="catalog__genres-link"
-      href="#"
       onClick={[Function]}
+      type="button"
     />
   </li>
 </ul>

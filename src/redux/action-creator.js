@@ -1,7 +1,9 @@
+import {ActionType} from './action-type';
+
 export const ActionCreator = {
   selectGenre: (genre) => {
     return {
-      type: `SELECT_GENRE`,
+      type: ActionType.SELECT_GENRE,
       payload: genre
     };
   }

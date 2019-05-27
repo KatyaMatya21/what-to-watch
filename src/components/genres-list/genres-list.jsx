@@ -18,15 +18,14 @@ class GenresList extends Component {
     return <ul className="catalog__genres-list">
 
       <li className={`catalog__genres-item ${currentGenre === false ? `catalog__genres-item--active` : ``}`}>
-        <a className="catalog__genres-link"
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
+        <button className="catalog__genres-link"
+          type="button"
+          onClick={() => {
             this._onClick(false);
           }}
         >
           All genres
-        </a>
+        </button>
       </li>
 
       {
@@ -35,15 +34,14 @@ class GenresList extends Component {
             <li className={`catalog__genres-item ${currentGenre === genre ? `catalog__genres-item--active` : ``}`}
               key={`genre-${i}`}
             >
-              <a className="catalog__genres-link"
-                href="#"
-                onClick={(event) => {
-                  event.preventDefault();
+              <button className="catalog__genres-link"
+                type="button"
+                onClick={() => {
                   this._onClick(genre);
                 }}
               >
                 {genre}
-              </a>
+              </button>
             </li>
           );
         })
