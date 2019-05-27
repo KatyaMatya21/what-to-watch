@@ -15,45 +15,41 @@ class GenresList extends Component {
 
     const genres = [...new Set(movies.map((movie) => movie.genre))];
 
-    return <React.Fragment>
+    return <ul className="catalog__genres-list">
 
-      <ul className="catalog__genres-list">
+      <li className={`catalog__genres-item ${currentGenre === false ? `catalog__genres-item--active` : ``}`}>
+        <a className="catalog__genres-link"
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            this._onClick(false);
+          }}
+        >
+          All genres
+        </a>
+      </li>
 
-        <li className={`catalog__genres-item ${currentGenre === false ? `catalog__genres-item--active` : ``}`}>
-          <a className="catalog__genres-link"
-            href="#"
-            onClick={(event) => {
-              event.preventDefault();
-              this._onClick(false);
-            }}
-          >
-            All genres
-          </a>
-        </li>
-
-        {
-          genres.map((genre, i) => {
-            return (
-              <li className={`catalog__genres-item ${currentGenre === genre ? `catalog__genres-item--active` : ``}`}
-                key={`genre-${i}`}
+      {
+        genres.map((genre, i) => {
+          return (
+            <li className={`catalog__genres-item ${currentGenre === genre ? `catalog__genres-item--active` : ``}`}
+              key={`genre-${i}`}
+            >
+              <a className="catalog__genres-link"
+                href="#"
+                onClick={(event) => {
+                  event.preventDefault();
+                  this._onClick(genre);
+                }}
               >
-                <a className="catalog__genres-link"
-                  href="#"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    this._onClick(genre);
-                  }}
-                >
-                  {genre}
-                </a>
-              </li>
-            );
-          })
-        }
+                {genre}
+              </a>
+            </li>
+          );
+        })
+      }
 
-      </ul>
-
-    </React.Fragment>;
+    </ul>;
   }
 }
 

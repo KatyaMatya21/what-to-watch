@@ -53,13 +53,9 @@ class MoviesList extends Component {
       );
     });
 
-    return <React.Fragment>
-
-      <div className="catalog__movies-list">
-        {movieList}
-      </div>
-
-    </React.Fragment>;
+    return <div className="catalog__movies-list">
+      {movieList}
+    </div>;
   }
 }
 
