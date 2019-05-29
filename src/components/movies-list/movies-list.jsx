@@ -39,10 +39,10 @@ class MoviesList extends Component {
   }
 
   render() {
-    const {movies} = this.props;
+    const {movies, currentGenre} = this.props;
 
     const movieList = movies.map((item, i) => {
-      return (
+      return (!currentGenre || currentGenre === item.genre) && (
         <Movie
           movie={item}
           key={i}
@@ -53,18 +53,15 @@ class MoviesList extends Component {
       );
     });
 
-    return <React.Fragment>
-
-      <div className="catalog__movies-list">
-        {movieList}
-      </div>
-
-    </React.Fragment>;
+    return <div className="catalog__movies-list">
+      {movieList}
+    </div>;
   }
 }
 
 MoviesList.propTypes = {
-  movies: PropTypes.PropTypes.arrayOf(movieType).isRequired
+  movies: PropTypes.PropTypes.arrayOf(movieType).isRequired,
+  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 
 export default MoviesList;

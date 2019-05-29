@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import MoviesList from '../movies-list/movies-list.jsx';
+import GenresList from '../genres-list/genres-list.jsx';
 
 const movies = [
   {
@@ -27,12 +27,12 @@ const movies = [
   }
 ];
 
-describe(`MoviesList component`, () => {
+describe(`GenresList component`, () => {
 
   it(`Correctly renders`, () => {
-    const MoviesListComponent = renderer
+    const GenresListComponent = renderer
       .create(
-          <MoviesList movies={movies} currentGenre={false} />,
+          <GenresList movies={movies} currentGenre={false} />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {
@@ -43,7 +43,7 @@ describe(`MoviesList component`, () => {
           }
       )
       .toJSON();
-    expect(MoviesListComponent).toMatchSnapshot();
+    expect(GenresListComponent).toMatchSnapshot();
   });
 
 });

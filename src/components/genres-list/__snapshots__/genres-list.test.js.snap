@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenresList component Correctly renders 1`] = `
+<ul
+  className="catalog__genres-list"
+>
+  <li
+    className="catalog__genres-item catalog__genres-item--active"
+  >
+    <button
+      className="catalog__genres-link"
+      onClick={[Function]}
+      type="button"
+    >
+      All genres
+    </button>
+  </li>
+  <li
+    className="catalog__genres-item "
+  >
+    <button
+      className="catalog__genres-link"
+      onClick={[Function]}
+      type="button"
+    />
+  </li>
+</ul>
+`;

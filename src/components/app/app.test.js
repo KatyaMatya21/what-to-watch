@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from '../app/app.jsx';
+import {App} from '../app/app.jsx';
 
 const movies = [
   {
@@ -18,7 +18,7 @@ describe(`App component`, () => {
   it(`Correctly renders`, () => {
     const AppComponent = renderer
       .create(
-          <App movies={movies}/>,
+          <App movies={movies} currentGenre={false} />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {
