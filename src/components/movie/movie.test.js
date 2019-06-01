@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import movies from '../../mocks/movies';
 
-import Movie from '../movie/movie.jsx';
+import Movie from './movie.jsx';
 
 const movie = movies[0];
 

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import movies from '../../mocks/movies';
 
-import PageMain from '../page-main/page-main.jsx';
+import PageMain from './page-main.jsx';
 
 describe(`PageMain component`, () => {
 

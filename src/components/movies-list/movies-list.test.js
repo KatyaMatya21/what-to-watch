@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import movies from '../../mocks/movies';
 
-import MoviesList from '../movies-list/movies-list.jsx';
+import MoviesList from './movies-list.jsx';
 
 describe(`MoviesList component`, () => {
 

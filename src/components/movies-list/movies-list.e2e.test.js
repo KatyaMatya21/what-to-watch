@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import movies from "../../mocks/movies";
 
-import MoviesList from '../movies-list/movies-list.jsx';
+import MoviesList from './movies-list.jsx';
 
 configure({adapter: new Adapter()});
 

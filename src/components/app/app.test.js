@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import movies from '../../mocks/movies';
 
-import {App} from '../app/app.jsx';
+import {App} from './app.jsx';
 
 describe(`App component`, () => {
 

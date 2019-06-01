@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Footer from '../footer/footer.jsx';
+import Footer from './footer.jsx';
 
 describe(`Footer component`, () => {
 
