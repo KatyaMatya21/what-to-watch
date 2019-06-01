@@ -1,17 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import {App} from '../app/app.jsx';
+import movies from '../../mocks/movies';
 
-const movies = [
-  {
-    'id': `1`,
-    'title': `What We Do in the Shadows`,
-    'src': `img/what-we-do-in-the-shadows.jpg`,
-    'link': `movie-page.html`,
-    'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`
-  }
-];
+import {App} from '../app/app.jsx';
 
 describe(`App component`, () => {
 
@@ -22,6 +14,7 @@ describe(`App component`, () => {
             movies={movies}
             currentGenre={false}
             selectGenre={() => jest.fn()}
+            isAuthorizationRequired={false}
           />,
           {
             createNodeMock: (element) => {

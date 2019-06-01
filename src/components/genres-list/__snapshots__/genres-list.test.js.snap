@@ -22,7 +22,53 @@ exports[`GenresList component Correctly renders 1`] = `
       className="catalog__genres-link"
       onClick={[Function]}
       type="button"
-    />
+    >
+      Comedies
+    </button>
+  </li>
+  <li
+    className="catalog__genres-item "
+  >
+    <button
+      className="catalog__genres-link"
+      onClick={[Function]}
+      type="button"
+    >
+      Crime
+    </button>
+  </li>
+  <li
+    className="catalog__genres-item "
+  >
+    <button
+      className="catalog__genres-link"
+      onClick={[Function]}
+      type="button"
+    >
+      Documentary
+    </button>
+  </li>
+  <li
+    className="catalog__genres-item "
+  >
+    <button
+      className="catalog__genres-link"
+      onClick={[Function]}
+      type="button"
+    >
+      Dramas
+    </button>
+  </li>
+  <li
+    className="catalog__genres-item "
+  >
+    <button
+      className="catalog__genres-link"
+      onClick={[Function]}
+      type="button"
+    >
+      Horror
+    </button>
   </li>
 </ul>
 `;

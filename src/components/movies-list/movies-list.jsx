@@ -46,7 +46,7 @@ class MoviesList extends Component {
 }
 
 MoviesList.propTypes = {
-  activeItem: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  activeItem: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   movies: PropTypes.PropTypes.arrayOf(movieType).isRequired,
   currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
   onClick: PropTypes.func.isRequired,

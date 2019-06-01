@@ -22,11 +22,11 @@ class VideoPlayer extends PureComponent {
     return <video
       width="280"
       height="175"
-      poster={`${movie.src}`}
+      poster={`${movie.previewImage}`}
       muted={true}
       ref={this._videoRef}
     >
-      <source src={movie.preview} type="video/mp4"/>
+      <source src={movie.previewVideoLink} />
     </video>;
   }
 

@@ -23,7 +23,7 @@ const Movie = (props) => {
       />
     </div>
     <h3 className="small-movie-card__title">
-      <a className="small-movie-card__link" href={movie.link}>{movie.title}</a>
+      <a className="small-movie-card__link" href={movie.link}>{movie.name}</a>
     </h3>
   </article>;
 };
