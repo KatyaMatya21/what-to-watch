@@ -32,7 +32,12 @@ describe(`GenresList component`, () => {
   it(`Correctly renders`, () => {
     const GenresListComponent = renderer
       .create(
-          <GenresList movies={movies} currentGenre={false} />,
+          <GenresList
+            movies={movies}
+            activeItem={false}
+            onClick={() => jest.fn()}
+            selectGenre={() => jest.fn()}
+          />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {

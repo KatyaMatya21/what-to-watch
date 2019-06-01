@@ -5,6 +5,11 @@ import movieType from '../../types/movie';
 import MoviesList from '../movies-list/movies-list.jsx';
 import GenresList from '../genres-list/genres-list.jsx';
 
+import {withActiveItem} from '../../hocs/with-active-item/with-active-item.jsx';
+
+const MoviesListWrapped = withActiveItem(MoviesList);
+const GenresListWrapped = withActiveItem(GenresList);
+
 const PageMain = (props) => {
   const {movies, currentGenre, selectGenre} = props;
 
@@ -97,8 +102,8 @@ const PageMain = (props) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <GenresList movies={movies} currentGenre={currentGenre} selectGenre={selectGenre} />
-        <MoviesList movies={movies} currentGenre={currentGenre} />
+        <GenresListWrapped movies={movies} currentGenre={currentGenre} selectGenre={selectGenre} />
+        <MoviesListWrapped movies={movies} currentGenre={currentGenre} />
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>

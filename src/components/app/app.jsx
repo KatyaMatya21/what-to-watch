@@ -29,7 +29,7 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, {
   movies: state.movies,
-  currentGenre: state.currentGenre,
+  currentGenre: state.currentGenre
 });
 
 const mapDispatchToProps = (dispatch) => ({
