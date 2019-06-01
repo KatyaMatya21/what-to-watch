@@ -8,7 +8,11 @@ class GenresList extends Component {
   }
 
   render() {
-    const {movies, onClick, activeItem} = this.props;
+    const {
+      movies,
+      onClick,
+      activeItem
+    } = this.props;
 
     const genres = [...new Set(movies.map((movie) => movie.genre))];
 

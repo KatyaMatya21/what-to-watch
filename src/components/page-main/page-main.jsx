@@ -11,7 +11,11 @@ const MoviesListWrapped = withActiveItem(MoviesList);
 const GenresListWrapped = withActiveItem(GenresList);
 
 const PageMain = (props) => {
-  const {movies, currentGenre, selectGenre} = props;
+  const {
+    movies,
+    currentGenre,
+    selectGenre
+  } = props;
 
   return <React.Fragment>
 
@@ -102,8 +106,16 @@ const PageMain = (props) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <GenresListWrapped movies={movies} currentGenre={currentGenre} selectGenre={selectGenre} />
-        <MoviesListWrapped movies={movies} currentGenre={currentGenre} />
+        <GenresListWrapped
+          movies={movies}
+          currentGenre={currentGenre}
+          selectGenre={selectGenre}
+        />
+
+        <MoviesListWrapped
+          movies={movies}
+          currentGenre={currentGenre}
+        />
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>

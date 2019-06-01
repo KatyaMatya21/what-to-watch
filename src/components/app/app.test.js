@@ -18,7 +18,11 @@ describe(`App component`, () => {
   it(`Correctly renders`, () => {
     const AppComponent = renderer
       .create(
-          <App movies={movies} currentGenre={false} />,
+          <App
+            movies={movies}
+            currentGenre={false}
+            selectGenre={() => jest.fn()}
+          />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {

@@ -15,7 +15,9 @@ class VideoPlayer extends PureComponent {
   }
 
   render() {
-    const {movie} = this.props;
+    const {
+      movie
+    } = this.props;
 
     return <video
       width="280"

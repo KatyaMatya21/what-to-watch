@@ -6,7 +6,12 @@ import Movie from '../movie/movie.jsx';
 
 class MoviesList extends Component {
   _getMovie(movie) {
-    const {activeItem, onClick, onMouseEnter, onMouseOut} = this.props;
+    const {
+      activeItem,
+      onClick,
+      onMouseEnter,
+      onMouseOut
+    } = this.props;
     const isHovered = movie.id === activeItem;
     const _onMouseEnter = () => onMouseEnter(movie.id, 1000);
 
@@ -23,7 +28,10 @@ class MoviesList extends Component {
   }
 
   render() {
-    const {movies, currentGenre} = this.props;
+    const {
+      movies,
+      currentGenre
+    } = this.props;
 
     const movieList = movies.map((movie) => {
       return (!currentGenre || currentGenre === movie.genre) && (
