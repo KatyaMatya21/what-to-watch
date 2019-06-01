@@ -4,13 +4,15 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import App from './components/app/app.jsx';
-import {reducer} from './redux/reducer';
+import {reducer, ActionCreator} from './redux/reducer';
 
 const init = () => {
   const store = createStore(
       reducer,
       window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
+
+  store.dispatch(ActionCreator.loadMovies());
 
   ReactDOM.render(<Provider store={store}>
     <App/>
