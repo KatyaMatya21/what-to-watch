@@ -6,6 +6,7 @@ import {
 } from "./data";
 
 describe(`Reducer works correctly!`, () => {
+
   it(`Should make a correct API call to /questions`, function () {
     const api = createAPI(dispatch);
     const apiMock = new MockAdapter(api);
@@ -25,4 +26,5 @@ describe(`Reducer works correctly!`, () => {
         });
       });
   });
+
 });

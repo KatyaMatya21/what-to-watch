@@ -8,9 +8,9 @@ import Movie from './movie.jsx';
 
 configure({adapter: new Adapter()});
 
-describe(`Movie component`, () => {
+const movie = movies[0];
 
-  const movie = movies[0];
+describe(`Movie component`, () => {
 
   it(`Correctly hovers on movie card`, () => {
     const hoverHandler = jest.fn();

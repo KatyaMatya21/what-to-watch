@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import VideoPlayer from './video-player.jsx';
 import movies from "../../mocks/movies";
+
+import VideoPlayer from './video-player.jsx';
 
 const movie = movies[0];
 
