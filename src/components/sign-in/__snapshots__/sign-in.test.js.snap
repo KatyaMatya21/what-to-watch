@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthorizationScreen component Correctly renders 1`] = `
+exports[`SignIn component Correctly renders 1`] = `
 Array [
   <div
     className="visually-hidden"
@@ -112,39 +112,7 @@ Array [
   <div
     className="user-page"
   >
-    <header
-      className="page-header user-page__head"
-    >
-      <div
-        className="logo"
-      >
-        <a
-          className="logo__link"
-          href="main.html"
-        >
-          <span
-            className="logo__letter logo__letter--1"
-          >
-            W
-          </span>
-          <span
-            className="logo__letter logo__letter--2"
-          >
-            T
-          </span>
-          <span
-            className="logo__letter logo__letter--3"
-          >
-            W
-          </span>
-        </a>
-      </div>
-      <h1
-        className="page-title user-page__title"
-      >
-        Sign in
-      </h1>
-    </header>
+    <Header />
     <div
       className="sign-in user-page__content"
     >
@@ -156,12 +124,13 @@ Array [
           className="sign-in__fields"
         >
           <div
-            className="sign-in__field"
+            className="sign-in__field "
           >
             <input
               className="sign-in__input"
               id="user-email"
               name="user-email"
+              onKeyUp={[Function]}
               placeholder="Email address"
               type="email"
             />
@@ -179,6 +148,7 @@ Array [
               className="sign-in__input"
               id="user-password"
               name="user-password"
+              onKeyUp={[Function]}
               placeholder="Password"
               type="password"
             />
@@ -195,7 +165,8 @@ Array [
         >
           <button
             className="sign-in__btn"
-            type="submit"
+            onClick={[Function]}
+            type="button"
           >
             Sign in
           </button>

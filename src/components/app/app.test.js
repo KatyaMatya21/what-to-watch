@@ -5,6 +5,8 @@ import movies from '../../mocks/movies';
 
 import {App} from './app.jsx';
 
+jest.mock(`../header/header`, () => `Header`);
+
 describe(`App component`, () => {
 
   it(`Correctly renders`, () => {

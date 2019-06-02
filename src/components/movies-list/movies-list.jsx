@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import movieType from '../../types/movie';
 
 import Movie from '../movie/movie.jsx';
 
-class MoviesList extends Component {
+class MoviesList extends PureComponent {
   _getMovie(movie) {
     const {
       activeItem,

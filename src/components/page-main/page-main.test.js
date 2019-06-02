@@ -5,6 +5,8 @@ import movies from '../../mocks/movies';
 
 import PageMain from './page-main.jsx';
 
+jest.mock(`../header/header`, () => `Header`);
+
 describe(`PageMain component`, () => {
 
   it(`Correctly renders`, () => {
