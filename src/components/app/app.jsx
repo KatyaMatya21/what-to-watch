@@ -24,13 +24,11 @@ class App extends PureComponent {
     if (isAuthorizationRequired) {
       return <SignIn/>;
     } else {
-
       return <PageMain
         movies={movies}
         currentGenre={currentGenre}
         selectGenre={selectGenre}
       />;
-
     }
   }
 }

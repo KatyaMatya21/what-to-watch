@@ -4,10 +4,9 @@ import movieType from '../../types/movie';
 
 import Movie from '../movie/movie.jsx';
 
-class MoviesList extends PureComponent {
 import {PLAY_DELAY} from '../../constants/constants';
 
-class MoviesList extends Component {
+class MoviesList extends PureComponent {
   _getMovie(movie) {
     const {
       activeItem,
@@ -15,6 +14,7 @@ class MoviesList extends Component {
       onMouseEnter,
       onMouseOut
     } = this.props;
+
     const isHovered = movie.id === activeItem;
     const _onMouseEnter = () => onMouseEnter(movie.id, PLAY_DELAY);
 

@@ -38,7 +38,7 @@ class SignIn extends PureComponent {
 
   render() {
 
-    return <React.Fragment>
+    return <>
 
       <Sprite />
 
@@ -97,7 +97,7 @@ class SignIn extends PureComponent {
 
       </div>
 
-    </React.Fragment>;
+    </>;
   }
 }
 
