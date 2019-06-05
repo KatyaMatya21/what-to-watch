@@ -4,13 +4,13 @@ import movieType from '../../types/movie';
 
 class GenresList extends Component {
   _onClick(genre) {
+    this.props.onClick(genre);
     this.props.selectGenre(genre);
   }
 
   render() {
     const {
       movies,
-      onClick,
       activeItem
     } = this.props;
 
@@ -22,7 +22,6 @@ class GenresList extends Component {
         <button className="catalog__genres-link"
           type="button"
           onClick={() => {
-            onClick(false);
             this._onClick(false);
           }}
         >
@@ -38,7 +37,6 @@ class GenresList extends Component {
               <button className="catalog__genres-link"
                 type="button"
                 onClick={() => {
-                  onClick(genre);
                   this._onClick(genre);
                 }}
               >
