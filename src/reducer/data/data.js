@@ -1,36 +1,33 @@
-import movies from "../mocks/movies";
+import {converter} from '../../helpers/converter/converter';
 
 const initialState = {
-  movies,
-  currentGenre: false
+  movies: []
 };
 
 const ActionType = {
-  SELECT_GENRE: `SELECT_GENRE`,
   LOAD_MOVIES: `LOAD_MOVIES`
 };
 
 const ActionCreator = {
-  selectGenre: (genre) => {
-    return {
-      type: ActionType.SELECT_GENRE,
-      payload: genre
-    };
-  },
-  loadMovies: () => {
+  loadMovies: (movies) => {
     return {
       type: ActionType.LOAD_MOVIES,
       payload: movies
     };
-  },
+  }
+};
+
+const Operation = {
+  loadMovies: () => (dispatch, _getState, api) => {
+    return api.get(`/films`)
+      .then((response) => {
+        dispatch(ActionCreator.loadMovies(response.data.map((movie) => converter(movie))));
+      });
+  }
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.SELECT_GENRE:
-      return Object.assign({}, state, {
-        currentGenre: action.payload
-      });
     case ActionType.LOAD_MOVIES:
       return Object.assign({}, state, {
         movies: action.payload
@@ -41,8 +38,8 @@ const reducer = (state = initialState, action) => {
 };
 
 export {
-  initialState,
   ActionCreator,
   ActionType,
+  Operation,
   reducer
 };

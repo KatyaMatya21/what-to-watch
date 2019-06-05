@@ -4,6 +4,7 @@ import movieType from '../../types/movie';
 
 import MoviesList from '../movies-list/movies-list.jsx';
 import GenresList from '../genres-list/genres-list.jsx';
+import Footer from '../footer/footer.jsx';
 
 import {withActiveItem} from '../../hocs/with-active-item/with-active-item.jsx';
 
@@ -17,7 +18,7 @@ const PageMain = (props) => {
     selectGenre
   } = props;
 
-  return <React.Fragment>
+  return <>
 
     <div className="visually-hidden">
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -122,22 +123,10 @@ const PageMain = (props) => {
         </div>
       </section>
 
-      <footer className="page-footer">
-        <div className="logo">
-          <a className="logo__link logo__link--light">
-            <span className="logo__letter logo__letter--1">W</span>
-            <span className="logo__letter logo__letter--2">T</span>
-            <span className="logo__letter logo__letter--3">W</span>
-          </a>
-        </div>
-
-        <div className="copyright">
-          <p>© 2019 What to watch Ltd.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
 
-  </React.Fragment>;
+  </>;
 };
 
 PageMain.propTypes = {

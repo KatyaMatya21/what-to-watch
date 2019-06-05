@@ -1,42 +1,42 @@
 export default [
   {
-    'id': `1`,
-    'title': `Fantastic Beasts: The Crimes of Grindelwald`,
-    'src': `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    'id': 1,
+    'name': `Fantastic Beasts: The Crimes of Grindelwald`,
+    'previewImage': `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     'link': `movie-page.html`,
-    'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    'previewVideoLink': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     'genre': `Comedies`
   },
   {
-    'id': `2`,
-    'title': `Bohemian Rhapsody`,
-    'src': `img/bohemian-rhapsody.jpg`,
+    'id': 2,
+    'name': `Bohemian Rhapsody`,
+    'previewImage': `img/bohemian-rhapsody.jpg`,
     'link': `movie-page.html`,
-    'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    'previewVideoLink': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     'genre': `Crime`
   },
   {
-    'id': `3`,
-    'title': `Macbeth`,
-    'src': `img/macbeth.jpg`,
+    'id': 3,
+    'name': `Macbeth`,
+    'previewImage': `img/macbeth.jpg`,
     'link': `movie-page.html`,
-    'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    'previewVideoLink': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     'genre': `Documentary`
   },
   {
-    'id': `4`,
-    'title': `We need to talk about Kevin`,
-    'src': `img/we-need-to-talk-about-kevin.jpg`,
+    'id': 4,
+    'name': `We need to talk about Kevin`,
+    'previewImage': `img/we-need-to-talk-about-kevin.jpg`,
     'link': `movie-page.html`,
-    'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    'previewVideoLink': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     'genre': `Dramas`
   },
   {
-    'id': `5`,
-    'title': `What We Do in the Shadows`,
-    'src': `img/what-we-do-in-the-shadows.jpg`,
+    'id': 5,
+    'name': `What We Do in the Shadows`,
+    'previewImage': `img/what-we-do-in-the-shadows.jpg`,
     'link': `movie-page.html`,
-    'preview': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    'previewVideoLink': `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     'genre': `Horror`
   }
 ];
