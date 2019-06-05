@@ -14,24 +14,25 @@ import AuthorizationScreen from "../authorization-screen/authorization-screen.js
 
 class App extends Component {
   render() {
-    return this._getPage();
-  }
-
-  _getPage() {
     const {
       movies,
       currentGenre,
       selectGenre,
       isAuthorizationRequired
     } = this.props;
+
     if (isAuthorizationRequired) {
+
       return <AuthorizationScreen/>;
+
     } else {
+
       return <PageMain
         movies={movies}
         currentGenre={currentGenre}
         selectGenre={selectGenre}
       />;
+
     }
   }
 }

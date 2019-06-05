@@ -13,8 +13,8 @@ const Movie = (props) => {
   } = props;
 
   return <article className="small-movie-card catalog__movies-card"
-    onMouseEnter={() => onMouseEnter(movie)}
-    onMouseOut={() => onMouseOut()}
+    onMouseEnter={onMouseEnter}
+    onMouseOut={onMouseOut}
   >
     <div className="small-movie-card__image">
       <VideoPlayer

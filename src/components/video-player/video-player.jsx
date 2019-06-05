@@ -2,6 +2,8 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import movieType from '../../types/movie';
 
+import {VideoPlayerSize} from '../../constants/constants';
+
 class VideoPlayer extends PureComponent {
   constructor(props) {
     super(props);
@@ -16,12 +18,14 @@ class VideoPlayer extends PureComponent {
 
   render() {
     const {
-      movie
+      movie,
+      width = VideoPlayerSize.WIDTH,
+      height = VideoPlayerSize.HEIGHT
     } = this.props;
 
     return <video
-      width="280"
-      height="175"
+      width={width}
+      height={height}
       poster={`${movie.previewImage}`}
       muted={true}
       ref={this._videoRef}
@@ -69,7 +73,9 @@ class VideoPlayer extends PureComponent {
 
 VideoPlayer.propTypes = {
   movie: movieType.isRequired,
-  isHovered: PropTypes.bool
+  isHovered: PropTypes.bool,
+  width: PropTypes.string,
+  height: PropTypes.string
 };
 
 export default VideoPlayer;
