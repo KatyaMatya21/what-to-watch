@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 
 import movieType from '../../types/movie';
-import {ActionCreator} from "../../redux/action-creator";
+import {ActionCreator} from "../../redux/reducer";
 
 import PageMain from '../page-main/page-main.jsx';
 
@@ -29,7 +29,7 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, {
   movies: state.movies,
-  currentGenre: state.currentGenre,
+  currentGenre: state.currentGenre
 });
 
 const mapDispatchToProps = (dispatch) => ({

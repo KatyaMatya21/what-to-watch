@@ -16,7 +16,12 @@ describe(`Movie component`, () => {
   it(`Correctly renders`, () => {
     const MovieComponent = renderer
       .create(
-          <Movie movie={movie} />,
+          <Movie
+            movie={movie}
+            onMouseEnter={() => jest.fn()}
+            onMouseOut={() => jest.fn()}
+            isHovered={false}
+          />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {

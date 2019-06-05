@@ -16,7 +16,9 @@ describe(`VideoPlayer component`, () => {
   it(`Correctly renders`, () => {
     const VideoPlayerComponent = renderer
       .create(
-          <VideoPlayer movie={movie}/>,
+          <VideoPlayer
+            movie={movie}
+          />,
           {
             createNodeMock: (element) => {
               if (element.type === `video`) {

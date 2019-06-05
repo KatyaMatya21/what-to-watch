@@ -5,51 +5,37 @@ import movieType from '../../types/movie';
 import Movie from '../movie/movie.jsx';
 
 class MoviesList extends Component {
-  constructor(props) {
-    super(props);
+  _getMovie(movie) {
+    const {
+      activeItem,
+      onClick,
+      onMouseEnter,
+      onMouseOut
+    } = this.props;
+    const isHovered = movie.id === activeItem;
+    const _onMouseEnter = () => onMouseEnter(movie.id, 1000);
 
-    this.state = {
-      activeCard: null,
-    };
-
-    this.timer = null;
-
-    this._onMouseEnter = this._onMouseEnter.bind(this);
-    this._onMouseOut = this._onMouseOut.bind(this);
-  }
-
-  _onMouseEnter(movie) {
-    if (this.timer) {
-      clearTimeout(this.timer);
-    }
-
-    this.timer = setTimeout(() => {
-      this.setState({
-        activeCard: movie.id
-      });
-    }, 1000);
-  }
-
-  _onMouseOut() {
-    clearTimeout(this.timer);
-
-    this.setState({
-      activeCard: null
-    });
+    return (
+      <Movie
+        movie={movie}
+        key={movie.id}
+        isHovered={isHovered}
+        onClick={onClick}
+        onMouseEnter={_onMouseEnter}
+        onMouseOut={onMouseOut}
+      />
+    );
   }
 
   render() {
-    const {movies, currentGenre} = this.props;
+    const {
+      movies,
+      currentGenre
+    } = this.props;
 
-    const movieList = movies.map((item, i) => {
-      return (!currentGenre || currentGenre === item.genre) && (
-        <Movie
-          movie={item}
-          key={i}
-          onMouseEnter={this._onMouseEnter}
-          onMouseOut={this._onMouseOut}
-          isHovered={(item.id === this.state.activeCard)}
-        />
+    const movieList = movies.map((movie) => {
+      return (!currentGenre || currentGenre === movie.genre) && (
+        this._getMovie(movie)
       );
     });
 
@@ -60,8 +46,12 @@ class MoviesList extends Component {
 }
 
 MoviesList.propTypes = {
+  activeItem: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   movies: PropTypes.PropTypes.arrayOf(movieType).isRequired,
-  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
+  currentGenre: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+  onClick: PropTypes.func.isRequired,
+  onMouseEnter: PropTypes.func.isRequired,
+  onMouseOut: PropTypes.func.isRequired
 };
 
 export default MoviesList;

@@ -36,6 +36,10 @@ describe(`MoviesList component`, () => {
     const MovieComponent = mount(
         <MoviesList
           movies={movies}
+          currentGenre={false}
+          onClick={() => jest.fn()}
+          onMouseEnter={() => jest.fn()}
+          onMouseOut={() => jest.fn()}
         />
     );
 

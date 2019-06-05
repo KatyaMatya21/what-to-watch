@@ -5,9 +5,17 @@ import movieType from '../../types/movie';
 import VideoPlayer from '../video-player/video-player.jsx';
 
 const Movie = (props) => {
-  const {movie, onMouseEnter = () => {}, onMouseOut = () => {}, isHovered} = props;
+  const {
+    movie,
+    onMouseEnter = () => {},
+    onMouseOut = () => {},
+    isHovered
+  } = props;
 
-  return <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnter(movie)} onMouseOut={() => onMouseOut()}>
+  return <article className="small-movie-card catalog__movies-card"
+    onMouseEnter={() => onMouseEnter(movie)}
+    onMouseOut={() => onMouseOut()}
+  >
     <div className="small-movie-card__image">
       <VideoPlayer
         movie={movie}
