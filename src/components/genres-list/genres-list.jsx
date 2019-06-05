@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import movieType from '../../types/movie';
 
-class GenresList extends Component {
+class GenresList extends PureComponent {
   _onClick(genre) {
     this.props.onClick(genre);
     this.props.selectGenre(genre);

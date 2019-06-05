@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 
@@ -10,9 +10,9 @@ import {getCurrentGenre} from "../../reducer/app/selectors";
 import {getAuthorizationStatus} from "../../reducer/user/selectors";
 
 import PageMain from '../page-main/page-main.jsx';
-import AuthorizationScreen from "../authorization-screen/authorization-screen.jsx";
+import SignIn from "../sign-in/sign-in.jsx";
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     const {
       movies,
@@ -22,17 +22,13 @@ class App extends Component {
     } = this.props;
 
     if (isAuthorizationRequired) {
-
-      return <AuthorizationScreen/>;
-
+      return <SignIn/>;
     } else {
-
       return <PageMain
         movies={movies}
         currentGenre={currentGenre}
         selectGenre={selectGenre}
       />;
-
     }
   }
 }
@@ -44,7 +40,7 @@ const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, {
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  selectGenre: (genre) => dispatch(ActionCreator.selectGenre(genre)),
+  selectGenre: (genre) => dispatch(ActionCreator.selectGenre(genre))
 });
 
 App.propTypes = {
