@@ -21,7 +21,7 @@ const PageMain = (props) => {
     selectGenre
   } = props;
 
-  return <React.Fragment>
+  return <>
 
     <Sprite />
 
@@ -89,7 +89,7 @@ const PageMain = (props) => {
       <Footer />
     </div>
 
-  </React.Fragment>;
+  </>;
 };
 
 PageMain.propTypes = {

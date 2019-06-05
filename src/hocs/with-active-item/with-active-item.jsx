@@ -28,13 +28,13 @@ export const withActiveItem = (Component) => {
     }
 
     render() {
-      const props = Object.assign({}, this.props, {
-        onClick: this._onClick,
-        onMouseEnter: this._onMouseEnter,
-        onMouseOut: this._onMouseOut,
-        activeItem: this.state.activeItem,
-      });
-      return <Component {...props}/>;
+      return <Component
+        {...this.props}
+        onClick={this._onClick}
+        onMouseEnter={this._onMouseEnter}
+        onMouseOut={this._onMouseOut}
+        activeItem={this.state.activeItem}
+      />;
     }
   }
 

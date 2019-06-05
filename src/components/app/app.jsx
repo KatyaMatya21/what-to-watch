@@ -14,10 +14,6 @@ import SignIn from "../sign-in/sign-in.jsx";
 
 class App extends PureComponent {
   render() {
-    return this._getPage();
-  }
-
-  _getPage() {
     const {
       movies,
       currentGenre,
@@ -28,11 +24,13 @@ class App extends PureComponent {
     if (isAuthorizationRequired) {
       return <SignIn/>;
     } else {
+
       return <PageMain
         movies={movies}
         currentGenre={currentGenre}
         selectGenre={selectGenre}
       />;
+
     }
   }
 }
